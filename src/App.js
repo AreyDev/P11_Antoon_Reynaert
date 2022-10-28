@@ -1,25 +1,41 @@
+import React, { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import About from "./pages/About";
+import Error404 from "./pages/Error404";
+import Home from "./pages/Home";
+import Lodging from "./pages/Lodging";
+import Header from "./components/layouts/Header";
+import Footer from "./components/layouts/Footer"
 
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src="#" className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+async function getData() {
+  const residences = await fetch("/data.json", {
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
+  });
+  const data = await residences.json();
+  return data;
 }
+
+const App = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    getData().then((residences) => {
+      setData(residences);
+    });
+  }, []);
+
+  return (
+    <BrowserRouter>
+      <Header />
+        <Routes>
+        <Route path="/" element={<Home data={data} />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/lodging/:id" element={<Lodging data={data} />} />
+        <Route path="*" element={<Error404 />} />
+        </Routes>
+      <Footer /> 
+    </BrowserRouter>
+  );
+};
 
 export default App;

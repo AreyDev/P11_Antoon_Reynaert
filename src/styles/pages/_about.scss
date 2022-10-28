@@ -1,0 +1,72 @@
+.about {
+    &-bannercontainer{
+        margin: 0 100px 0 100px;
+        @include tablet() {
+            margin: 0 20px;
+        }
+    }
+    &-banner {
+        margin-top: 63px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        height: 223px;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../../assets/images/aboutbanner.jpg);
+        background-size: cover;
+        border-radius: 25px;
+        @include mobile() {
+            margin-top: 20px;
+        }
+    }
+    &-infos {
+        margin: 30px 209px 40px 209px;
+        @include tablet() {
+            margin: 20px 20px 180px 20px;
+        }
+    }
+    &-accordion {
+        margin-bottom: 31px;
+        @include tablet() {
+            margin-bottom: 20px;
+        }
+        .title {
+            background-color: $primarycolor;
+            color: $secondarycolor;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 10px;
+            padding: 13px 20px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            @include tablet() {
+                padding: 6px 12px;
+                font-size: 13px;
+            }
+        }
+        img {
+            width: 14px;
+            height: 24px;
+        }
+        .droplist {
+            background-color: $quaternarycolor;
+            position: relative;
+            z-index: -1;
+            padding: 36px 27px 19px 18px;
+            font-size: 24px;
+            font-weight: 500;
+            color: $primarycolor;
+            border-radius: 5px;
+            top: -13px;
+            @include tablet() {
+                font-size: 12px;
+                font-weight: 400;
+            }
+            &-closed {
+                display: none;
+            }
+        }
+    }
+}

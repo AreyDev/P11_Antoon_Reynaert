@@ -1,0 +1,226 @@
+.lodging {
+    &-main {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 100px;
+        @include tablet() {
+            flex-direction: column;
+            justify-content: flex-start;
+            margin: 0 20px;
+        }
+    }
+    &-maininfos {
+        display: flex;
+        flex-direction: column;
+        @include tablet() {
+            align-self: flex-start;
+            margin-bottom: 16.5px;
+        }
+        h1 {
+            font-size: 36px;
+            font-weight: 500;
+            display: flex;
+            align-items: flex-end;
+            @include tablet() {
+                font-size: 18px;
+            }
+        }
+        p {
+            font-size: 18px;
+            font-weight: 500;
+            display: flex;
+            align-items: flex-end;
+            margin-bottom: 20px;
+            @include tablet() {
+                font-size: 14px;
+            }
+        }
+        h1, p {
+            color: $primarycolor;
+        }
+    }
+    &-tagsection {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .tags {
+            background-color: $primarycolor;
+            color: $secondarycolor;
+            height: 25px;
+            padding: 3px 30px;
+            font-size: 14px;
+            font-weight: 500;
+            text-align: center;
+            border-radius: 10px;
+            @include tablet() {
+                height: 18px;
+                font-size: 10px;
+                border-radius: 5px;
+                padding: 3px 25px;
+            }
+        }
+    }
+    &-secondaryinfos {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: flex-end;
+        @include tablet() {
+            flex-direction: row-reverse;
+            margin-bottom: 16px;
+        }
+        .star { 
+            margin-left: 10px;
+            cursor: pointer;
+            @include tablet() {
+                width: 15px;
+                height: 15px;
+                margin-left: 5px;
+            }
+        }
+    }
+    &-hostinfos {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-bottom: 20px;
+        @include tablet() {
+            margin-bottom: 0;
+        }
+        p {
+            text-align: right;
+            font-size: 18px;
+            font-weight: 500;
+            color: $primarycolor;
+            width: 93px;
+            @include tablet() {
+                width: 50%;
+                font-size: 12px;
+            }
+        }
+    }
+    &-hostprofile {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        @include tablet() {
+            width: 32px;
+            height: 32px;
+        }
+    }
+    &-detailedinfos {
+        display: flex;
+        justify-content: space-between;
+        margin: 24px 100px;
+        @include tablet() {
+            flex-direction: column;
+            margin: 0 20px;
+        }
+        .accordion {
+            width: 582px;
+            @include tablet() {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .title {
+                background-color: $primarycolor;
+                color: $secondarycolor;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border-radius: 10px;
+                padding: 13px 20px;
+                font-size: 18px;
+                font-weight: 500;
+                height: 52px;
+                cursor: pointer;
+                @include tablet() {
+                    border-radius: 5px;
+                    height: 29px;
+                    font-size: 13px;
+                }
+                .arrows{ 
+                    @include tablet() {
+                        width: 9px;
+                        height: 15.2px;
+                    }
+                }
+            }
+            .droplist {
+                background-color: $quaternarycolor;
+                position: relative;
+                z-index: -1;
+                padding: 40px 27px 0 18px;
+                font-size: 18px;
+                height: 249px;
+                font-weight: 400;
+                line-height: 142.6%;
+                color: $primarycolor;
+                border-radius: 5px;
+                top: -13px;
+                display: flex;
+                flex-direction: column;
+                @include tablet() {
+                    font-size: 12px;
+                }
+                &-closed {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.carrousel {
+    margin: 25px 100px 30px 100px;
+    position: relative;
+    @include tablet() {
+        margin: 25px 20px 15px 20px;
+    }
+    .showimages {
+        width: 100%;
+        height: 515px;
+        border-radius: 25px;
+        object-fit: cover;
+        @include tablet() {
+            height: 255px;
+        }
+    }
+    .arrowright {
+        cursor: pointer;
+        position: absolute;
+        top: 220px;
+        right: 2%;
+        height: 60px;
+        @include tablet() {
+            height: 20px;
+            width: 12px;
+            top: 120px;
+        }
+    }
+    .arrowleft {
+        cursor: pointer;
+        position: absolute;
+        top: 220px;
+        left: 2%;
+        height: 60px;
+        @include tablet() {
+            height: 20px;
+            width: 12px;
+            top: 120px;
+        }
+    }
+    &number {
+        font-weight: 500;
+        font-size: 18px;
+        position: absolute;
+        left: 48.95%;
+        right: 49.11%;
+        top: 89%;
+        color: $secondarycolor;
+        @include tablet() {
+            display: none;
+        }
+    }
+}

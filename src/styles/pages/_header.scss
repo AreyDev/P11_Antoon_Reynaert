@@ -1,0 +1,38 @@
+.header {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 40px 100px 0 100px;
+    @include tablet() {
+        margin: 20px 20px 16px 20px;
+        .logo{
+            width: 145px;
+            height: 47px;
+        }
+    }
+    ul {
+        display: flex;
+        flex-direction: row;
+        gap: 57px;
+        justify-content: flex-end;
+        width: 309px;
+        @include tablet() {
+            gap: 10px
+        }
+        li {
+            font-size: 24px;
+            font-weight: 500;
+            color: $primarycolor;
+            @include tablet() {
+                font-size: 12px;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+.nav-active {
+    text-decoration: underline;
+    color: $primarycolor;
+}

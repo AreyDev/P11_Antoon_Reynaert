@@ -1,0 +1,41 @@
+.error404section {
+    margin: 175px 100px 50px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $primarycolor;
+    @include tablet() {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    h1 {
+        font-size: 288px;
+        font-weight: 700;
+        @include tablet() {
+            font-size: 96px;
+            margin-left: 88px;
+            margin-right: 89px;
+        }
+    }
+    h2 {
+        font-size: 36px;
+        font-weight: 500;
+        margin-bottom: 182px;
+        @include tablet() {
+            font-size: 18px;
+            text-align: center;
+            margin-left: 57px;
+            margin-right: 58px;
+        }
+    }
+    p {
+        font-size: 18px;
+        font-weight: 500;
+        color: $primarycolor;
+        text-decoration: underline;
+        @include tablet() {
+            font-size: 14px;
+        }
+    }
+}
