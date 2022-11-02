@@ -12,7 +12,8 @@ const Lodging = ({ data }) => {
   const item = data.find((item) => item.id === id);
   if (!item) {
     return <Error404 />;
-  } else {
+  } 
+  else {
     const {
       description,
       equipments,
